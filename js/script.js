@@ -3,6 +3,7 @@ const authorSpan = document.querySelector(".author");
 const imgDiv = document.querySelector(".image-container");
 const img = document.querySelector(".img");
 
+/*asnchronous function to call photo list and make it an object js can access*/
 const getImage = async function () {
     const res = await fetch(
         "https://picsum.photos/v2/list?limit=100"
@@ -10,6 +11,7 @@ const getImage = async function () {
     const images = await res.json();
     //console.log(images);  
 
+    /*call select random image function to select image argument from object*/
     selectRandomImage(images);
 };
 
